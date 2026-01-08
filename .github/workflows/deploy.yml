@@ -1,0 +1,32 @@
+name: Deploy Portfolio to Pages
+on:
+    push:
+        branches: ["main"] # Triggers on push to main branch
+    workflow_dispatch: # Allows manual triggers from the Actions tab
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+jobs:
+    deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4 # Gets your code
+
+            - name: Setup Pages
+              uses: actions/configure-pages@v5 # Prepares the Pages environment
+
+            - name: Upload Artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: "." # Change this to './out' or './dist' if using Next.js/React
+
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4 # Final deployment step
