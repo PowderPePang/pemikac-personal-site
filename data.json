@@ -1,0 +1,118 @@
+{
+  "profile": {
+    "name": "Pemika Chongkwanyuen",
+    "title": "Computer Engineering Student",
+    "email": "paeng.pemika@gmail.com",
+    "phone": "088-881-4229",
+    "github": "github.com/yourusername",
+    "linkedin": "linkedin.com/in/yourusername",
+    "about": "I am a Computer Engineering student at KMUTT (Honors Program) with a strong passion for Data Science, AI, and Software Development. I have experience in full-stack development, chatbot creation, and hardware integration. I am an active learner seeking opportunities to apply my skills in real-world projects.",
+    "skills": ["Python", "SQL", "C", "HTML/CSS", "Data Analytics", "Machine Learning", "Chatbot Dev"]
+  },
+  "education": [
+    {
+      "institution": "King Mongkut's University of Technology Thonburi (KMUTT)",
+      "degree": "B.Eng. Computer Engineering (Honors Program)",
+      "period": "2023 - Present",
+      "gpa": "3.95",
+      "details": "Department Top Student Scholarship (2/2023 - 1/2025)"
+    },
+    {
+      "institution": "Assumption College Thonburi",
+      "degree": "High School - Enrichment Science Classroom Program",
+      "period": "2020 - 2023",
+      "gpa": "4.00",
+      "details": "John Mary Scholarship recipient."
+    }
+  ],
+  "academic_awards": [
+    {
+      "title": "Academic Excellence Award in Science (Year 1)",
+      "organization": "Prof. Dr. Tab Nilanidhi Foundation",
+      "year": "2024"
+    },
+    {
+      "title": "1st Runner-up National Software Contest (NSC 2022)",
+      "organization": "NSTDA",
+      "year": "2022",
+      "project": "Domacod"
+    },
+    {
+      "title": "2nd Runner-up BOTNOI Chatbot Marahackathon",
+      "organization": "Botnoi Consulting",
+      "year": "2022"
+    },
+    {
+      "title": "National Finalist ASEAN Data Science Explorers",
+      "organization": "ASEAN Foundation & SAP",
+      "year": "2022"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Hackathon Participant",
+      "company": "Journey to Data Universe",
+      "period": "Feb 2025",
+      "description": "Participated in the Data Analyst bootcamp and competition organized by Khon Kaen University."
+    },
+    {
+      "role": "Super AI Engineer Season 2 Trainee",
+      "company": "AI Association of Thailand",
+      "period": "2021",
+      "description": "Passed to Level 2. Trained in Image Processing, NLP, Big Data Analytics, and IoT."
+    },
+    {
+      "role": "Developer & Pitching",
+      "company": "PSU Chatbot Team",
+      "period": "2022",
+      "description": "Developed a chatbot for Prince of Songkla University's Law Faculty to handle student requests and FAQs."
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Hotel Service Line & Facebook Chatbot",
+      "category": "Chatbot",
+      "date": "2025-01-01",
+      "image": "https://placehold.co/600x400?text=Chatbot",
+      "tech_stack": ["n8n", "RAG", "Pinecone", "ngrok"],
+      "description": "AI chatbot for 'The Rich Hotel Rama V' to automate customer service, handling inquiries about room rates and facilities 24/7."
+    },
+    {
+      "id": 2,
+      "title": "FPGA-Tetris",
+      "category": "Hardware",
+      "date": "2024-12-01",
+      "image": "https://placehold.co/600x400?text=FPGA+Tetris",
+      "tech_stack": ["Verilog", "Basys3 FPGA", "Xilinx Vivado"],
+      "description": "A Tetris game implementation on hardware using Verilog HDL, featuring VGA display output and real-time score tracking."
+    },
+    {
+      "id": 3,
+      "title": "Domacod",
+      "category": "Software Development",
+      "date": "2022-03-01",
+      "image": "https://placehold.co/600x400?text=Domacod",
+      "tech_stack": ["Mobile App", "Google Cloud Vision API", "OCR"],
+      "description": "An image categorization and search application using Object Detection and OCR. 1st Runner-up at NSC 2022."
+    },
+    {
+      "id": 4,
+      "title": "Smart Elderly Care Service",
+      "category": "Data Analytics",
+      "date": "2022-08-01",
+      "image": "https://placehold.co/600x400?text=Elderly+Care",
+      "tech_stack": ["SAP Analytics Cloud", "Data Analysis"],
+      "description": "Designed a 'Caregiver Hub' solution based on data analysis of the aging society in ASEAN. National Finalist in ASEAN DSE 2022."
+    },
+    {
+      "id": 5,
+      "title": "Sweeper Robot",
+      "category": "Hardware",
+      "date": "2022-01-30",
+      "image": "https://placehold.co/600x400?text=Sweeper+Robot",
+      "tech_stack": ["Robotics", "Prototyping"],
+      "description": "Automatic floor cleaning and waste separation robot prototype created for the Future Perfect 2022 MIDI Hackathon."
+    }
+  ]
+}
