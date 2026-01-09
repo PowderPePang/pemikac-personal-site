@@ -3,16 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Portfolio | Pemika Chongkwanyuen</title>
+        <title>Pemika Chongkwanyuen | Portfolio</title>
+        <link rel="icon" type="image/png" href="asset/letter-p.png" />
         <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
     </head>
     <body>
         <nav>
             <div class="logo">Pemika.</div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="pages/experience.html">Experience</a></li>
+                <li><a href="pages/projects.html">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -20,7 +25,7 @@
         <section class="hero">
             <div class="profile-img-container">
                 <img
-                    src="asset\CPE_Night_Market.jpg"
+                    src="asset\profile.jpg"
                     alt="Pemika Profile"
                     class="profile-img"
                     id="hero-img"
@@ -37,7 +42,7 @@
                 </h2>
                 <div class="btn-container">
                     <a
-                        href="Portfolio_PemikaChongkwanyuen.pdf"
+                        href="asset\PemikaChongkwanyuen_CV.pdf"
                         download
                         class="btn btn-primary"
                         >Download CV</a
@@ -71,11 +76,24 @@
             <div class="academic-grid" id="academic-container"></div>
         </section>
 
+        <section id="recent-experience">
+            <h2>Experience</h2>
+            <div
+                class="experience-container"
+                id="recent-experience-container"
+            ></div>
+            <div style="text-align: center; margin-top: 2rem">
+                <a href="pages/experience.html" class="btn btn-secondary"
+                    >View All Experiences</a
+                >
+            </div>
+        </section>
+
         <section id="recent-projects">
             <h2>Recent Projects</h2>
             <div class="projects-grid" id="recent-projects-container"></div>
             <div style="text-align: center; margin-top: 2rem">
-                <a href="projects.html" class="btn btn-secondary"
+                <a href="pages/projects.html" class="btn btn-secondary"
                     >View All Projects</a
                 >
             </div>
@@ -83,10 +101,7 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <div style="text-align: center">
-                <p id="contact-email"></p>
-                <p id="contact-phone"></p>
-            </div>
+            <div id="contact-container" style="text-align: center"></div>
         </section>
 
         <script src="script.js"></script>
@@ -97,8 +112,17 @@
                     renderProfile(data.profile);
                     renderEducation(data.education);
                     renderAwards(data.academic_awards);
+                    // Sort by recent first
+                    const sortedExperiences = [...data.experience].sort(
+                        (a, b) => new Date(b.period) - new Date(a.period)
+                    );
+                    renderRecentExperience(sortedExperiences, 3);
+                    // Sort by recent first
+                    const sortedProjects = [...data.projects].sort(
+                        (a, b) => new Date(b.date) - new Date(a.date)
+                    );
                     renderProjects(
-                        data.projects,
+                        sortedProjects,
                         "recent-projects-container",
                         3
                     ); // Limit to 3

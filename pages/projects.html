@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pemika | Projects</title>
+        <link rel="icon" type="image/png" href="../asset/letter-p.png" />
+        <link rel="stylesheet" href="../style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <nav>
+            <div class="logo">Pemika.</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li>
+                    <a href="projects.html" class="active">Projects</a>
+                </li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h2>My Projects</h2>
+
+            <!-- Search Bar -->
+            <div style="text-align: center; margin-bottom: 2rem">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search projects by keyword..."
+                    style="
+                        width: 100%;
+                        max-width: 500px;
+                        padding: 0.8rem;
+                        border: 1px solid #e0e0e0;
+                        border-radius: 8px;
+                        font-size: 1rem;
+                    "
+                />
+            </div>
+
+            <!-- Filter & Sort Controls -->
+            <div class="filter-sort-container">
+                <div class="filter-container" id="filter-container"></div>
+                <select class="sort" id="sort-select">
+                    <option value="recent">Recently</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="category">By Category</option>
+                </select>
+            </div>
+
+            <div class="projects-grid" id="all-projects-container"></div>
+        </section>
+
+        <script src="../script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                loadData().then((data) => {
+                    initProjectPage(data.projects);
+                });
+            });
+        </script>
+    </body>
+</html>

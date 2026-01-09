@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pemika | Experience</title>
+        <link rel="icon" type="image/png" href="../asset/letter-p.png" />
+        <link rel="stylesheet" href="../style.css" />
+    </head>
+    <body>
+        <nav>
+            <div class="logo">Pemika.</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="experience.html" class="active">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h2>Work & Activity Experience</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666">
+                Click on an item to see more details
+            </p>
+
+            <div class="timeline-container" id="experience-container"></div>
+        </section>
+
+        <script src="../script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                loadData().then((data) => {
+                    renderExperience(data.experience);
+                });
+            });
+        </script>
+    </body>
+</html>

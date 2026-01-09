@@ -1,7 +1,7 @@
 :root {
     --primary-color: #333;
     --secondary-color: #555;
-    --accent-color: #007bff;
+    --accent-color: #e34664;
     --bg-color: #ffffff;
     --card-bg: #f9f9f9;
     --border-color: #e0e0e0;
@@ -26,8 +26,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 5%;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
+    background-color: var(--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -165,6 +170,63 @@ h2 {
     top: 4px;
 }
 
+/* Experience Container & Cards */
+.experience-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.experience-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--accent-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.experience-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.experience-header h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.experience-period {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+
+.experience-company {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.experience-description {
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
 /* Timeline / Experience Path Graphic */
 .timeline-container {
     position: relative;
@@ -183,6 +245,7 @@ h2 {
     bottom: 0;
     left: 0;
     margin-left: -2px;
+    z-index: 1;
 }
 
 .timeline-item {
@@ -195,12 +258,16 @@ h2 {
     margin-left: 20px;
     transition: all 0.3s ease;
     cursor: pointer;
+    z-index: 2;
 }
 
 .timeline-item:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transform: translateX(5px);
     border-color: var(--accent-color);
+}
+
+.timeline-item:hover::before {
+    transform: scale(1.3);
 }
 
 /* The dot on the timeline */
@@ -209,12 +276,14 @@ h2 {
     position: absolute;
     width: 16px;
     height: 16px;
-    left: -28px; /* Adjust based on margin-left and line position */
+    left: -63px;
+    /* left: -28px; Adjust based on margin-left and line position */
     background-color: var(--bg-color);
     border: 4px solid var(--accent-color);
     top: 20px;
     border-radius: 50%;
-    z-index: 1;
+    z-index: 20;
+    transition: transform 0.3s ease;
 }
 
 .timeline-date {
@@ -249,12 +318,20 @@ h2 {
 }
 
 /* Projects Page */
+.filter-sort-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
 .filter-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .filter-btn {
@@ -264,12 +341,46 @@ h2 {
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
     background-color: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
+}
+
+.category-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: inherit;
+    padding: 0.1rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.filter-btn.active .category-count {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sort {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.sort:hover,
+.sort.active {
     border-color: var(--primary-color);
 }
 
@@ -288,7 +399,7 @@ h2 {
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -324,6 +435,77 @@ h2 {
     font-size: 0.75rem;
 }
 
+.project-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+    /* padding-top: 1rem; */
+    /* border-top: 1px solid var(--border-color); */
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.project-links a:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.contact-link:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    transform: translateX(0px);
+}
+
+.contact-link i {
+    font-size: 1.3rem;
+    width: 30px;
+    text-align: center;
+}
+
+.contact-link span {
+    flex: 1;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -347,6 +529,8 @@ h2 {
         margin-left: 40px;
     }
     .timeline-item::before {
-        left: -28px;
+        left: -63px;
+        /* left: -28px; */
+        z-index: 10;
     }
 }

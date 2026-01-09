@@ -3,26 +3,27 @@
     "name": "Pemika Chongkwanyuen",
     "title": "Computer Engineering Student",
     "email": "paeng.pemika@gmail.com",
-    "phone": "088-881-4229",
-    "github": "github.com/yourusername",
-    "linkedin": "linkedin.com/in/yourusername",
+    "phone": "+66-88-881-4229",
+    "github": "github.com/PowderPePang",
+    "linkedin": "linkedin.com/in/pemika-chongkwanyuen",
+    "medium": "medium.com/@paeng.pemika",
     "about": "I am a Computer Engineering student at KMUTT (Honors Program) with a strong passion for Data Science, AI, and Software Development. I have experience in full-stack development, chatbot creation, and hardware integration. I am an active learner seeking opportunities to apply my skills in real-world projects.",
-    "skills": ["Python", "SQL", "C", "HTML/CSS", "Data Analytics", "Machine Learning", "Chatbot Dev"]
+    "skills": ["Python", "SQL", "Shell Script", "C/C++", "HTML/CSS", "Javascript", "Data Analytics", "Machine Learning", "Chatbot Dev"]
   },
   "education": [
     {
       "institution": "King Mongkut's University of Technology Thonburi (KMUTT)",
       "degree": "B.Eng. Computer Engineering (Honors Program)",
-      "period": "2023 - Present",
-      "gpa": "3.95",
+      "period": "2023 - 2027",
+      "gpa": "3.94",
       "details": "Department Top Student Scholarship (2/2023 - 1/2025)"
     },
     {
       "institution": "Assumption College Thonburi",
-      "degree": "High School - Enrichment Science Classroom Program",
+      "degree": "High School | Sci-Math (Gifted Classroom)",
       "period": "2020 - 2023",
       "gpa": "4.00",
-      "details": "John Mary Scholarship recipient."
+      "details": "John Mary Scholarship recipient"
     }
   ],
   "academic_awards": [
@@ -32,40 +33,23 @@
       "year": "2024"
     },
     {
-      "title": "1st Runner-up National Software Contest (NSC 2022)",
-      "organization": "NSTDA",
-      "year": "2022",
-      "project": "Domacod"
-    },
-    {
-      "title": "2nd Runner-up BOTNOI Chatbot Marahackathon",
-      "organization": "Botnoi Consulting",
-      "year": "2022"
-    },
-    {
-      "title": "National Finalist ASEAN Data Science Explorers",
-      "organization": "ASEAN Foundation & SAP",
-      "year": "2022"
+      "title": " Undergraduate Academic Excellence Scholarship",
+      "organization": "Department of Computer Engineering, KMUTT",
+      "year": "Semester 2/2023 to Semester 1/2025"
     }
   ],
   "experience": [
     {
-      "role": "Hackathon Participant",
-      "company": "Journey to Data Universe",
-      "period": "Feb 2025",
-      "description": "Participated in the Data Analyst bootcamp and competition organized by Khon Kaen University."
+      "role": "Vice President & Camp Organizer",
+      "company": "Gifted Education Office (GEO), KMUTT",
+      "period": "Sep 2024",
+      "description": "Organized the 11th Applied Mathematics Workshop for Honors students in Kanchanaburi. Led interdisciplinary group activities to foster unity and relationships between juniors and seniors, while promoting the application of mathematical skills outside the classroom."
     },
     {
-      "role": "Super AI Engineer Season 2 Trainee",
-      "company": "AI Association of Thailand",
+      "role": "Super AI Engineer Season 2",
+      "company": "The Artificial Intelligence Association of Thailand (AIAT)",
       "period": "2021",
-      "description": "Passed to Level 2. Trained in Image Processing, NLP, Big Data Analytics, and IoT."
-    },
-    {
-      "role": "Developer & Pitching",
-      "company": "PSU Chatbot Team",
-      "period": "2022",
-      "description": "Developed a chatbot for Prince of Songkla University's Law Faculty to handle student requests and FAQs."
+      "description": "Advance to Level 2 and be eligible to receive a 50,000 THB scholarship."
     }
   ],
   "projects": [
@@ -73,46 +57,109 @@
       "id": 1,
       "title": "Hotel Service Line & Facebook Chatbot",
       "category": "Chatbot",
-      "date": "2025-01-01",
-      "image": "https://placehold.co/600x400?text=Chatbot",
+      "date": "2025-06-19",
+      "image": "asset/hotel-service-line-fb-chatbot.png?text=Chatbot",
       "tech_stack": ["n8n", "RAG", "Pinecone", "ngrok"],
-      "description": "AI chatbot for 'The Rich Hotel Rama V' to automate customer service, handling inquiries about room rates and facilities 24/7."
+      "description": "AI chatbot for 'The Rich Hotel Rama V' to automate customer service, handling inquiries about room rates and facilities 24/7.",
+      "github": "https://github.com/PowderPePang/Line-Facebook-Chatbot.git",
+      "more_info": null
     },
     {
       "id": 2,
-      "title": "FPGA-Tetris",
+      "title": "FPGA - Tetris",
       "category": "Hardware",
-      "date": "2024-12-01",
-      "image": "https://placehold.co/600x400?text=FPGA+Tetris",
-      "tech_stack": ["Verilog", "Basys3 FPGA", "Xilinx Vivado"],
-      "description": "A Tetris game implementation on hardware using Verilog HDL, featuring VGA display output and real-time score tracking."
+      "date": "2024-12-16",
+      "image": "asset/fpga-tetris.jpg?text=FPGA-Tetris",
+      "tech_stack": ["Verilog", "Basys3 FPGA", "Xilinx Vivado", "VGA", "Digital Electronics"],
+      "description": "This project implements the classic puzzle game Tetris on an FPGA board using Verilog. The game runs on a Digilent Basys3 (Xilinx Artix-7) and outputs graphics via VGA, with scores displayed on a 7-segment display.",
+      "github": "https://github.com/PowderPePang/CPE222_FinalProject_FPGA_Tetris.git",
+      "more_info": null
     },
     {
       "id": 3,
-      "title": "Domacod",
+      "title": "Domacod | 1st Runner-up NSC 2022",
       "category": "Software Development",
-      "date": "2022-03-01",
-      "image": "https://placehold.co/600x400?text=Domacod",
-      "tech_stack": ["Mobile App", "Google Cloud Vision API", "OCR"],
-      "description": "An image categorization and search application using Object Detection and OCR. 1st Runner-up at NSC 2022."
+      "date": "2022-03-14",
+      "image": "asset/domacod.jpg?text=Domacod",
+      "tech_stack": ["Mobile App", "Flutter", "Object Detection", "NoSQL", "Google Cloud Vision API", "OCR"],
+      "description": "An application to index images based on the content of the image. By using object detection and optical character recognition, we categorized images and enabled text searching.",
+      "github": "https://github.com/wtarit/domacod.git",
+      "more_info": "https://www.facebook.com/100000550526763/videos/312858850738229/?idorvanity=130760193605030"
     },
     {
       "id": 4,
-      "title": "Smart Elderly Care Service",
+      "title": "Smart Elderly Care Service | National Finalist in ASEAN DSE 2022",
       "category": "Data Analytics",
       "date": "2022-08-01",
-      "image": "https://placehold.co/600x400?text=Elderly+Care",
+      "image": "asset/adse2022.jpg?text=Elderly+Care",
       "tech_stack": ["SAP Analytics Cloud", "Data Analysis"],
-      "description": "Designed a 'Caregiver Hub' solution based on data analysis of the aging society in ASEAN. National Finalist in ASEAN DSE 2022."
+      "description": "Developed a data analytics storyboard and designed a 'Caregiver Hub' solution based on data analysis of the aging society in ASEAN."
     },
     {
       "id": 5,
-      "title": "Sweeper Robot",
-      "category": "Hardware",
-      "date": "2022-01-30",
-      "image": "https://placehold.co/600x400?text=Sweeper+Robot",
-      "tech_stack": ["Robotics", "Prototyping"],
-      "description": "Automatic floor cleaning and waste separation robot prototype created for the Future Perfect 2022 MIDI Hackathon."
+      "title": "C Man - Shortest Path Algo Comparison",
+      "category": "Software Development",
+      "date": "2024-05-29",
+      "image": "asset/c-man.jpg?text=Sweeper+Robot",
+      "tech_stack": ["Data Structures", "C", "A*", "Dijkstra", "BFS", "IDDFS"],
+      "description": "A Pac-Man inspired game implemented in C to demonstrate real-time pathfinding. Features intelligent 'ghosts' powered by A*, Dijkstra, BFS, and IDDFS algorithms, allowing for a comparative observation of algorithmic performance in a dynamic environment.",
+      "github": "https://github.com/PowderPePang/c-man.git",
+      "more_info": null
+    },
+    {
+      "id": 6,
+      "title": "PSU Chatbot | 2nd Runner-up BOTNOI Chatbot Marahackathon 2022",
+      "category": "Chatbot",
+      "date": "2022-05-28",
+      "image": "asset/psu-chatbot.jpg?text=PSU Chatbot",
+      "tech_stack": ["Python", "Firebase", "App Engine", "Google Sheets", "Automated PDF", "Jotform"],
+      "description": "Developed a chatbot for Prince of Songkla University's Law Faculty to handle student requests and FAQs.",
+      "github": null,
+      "more_info": "https://youtu.be/8f2frPJxwaY?si=ttn_YJgzj6R3aLFi"
+    },
+    {
+      "id": 7,
+      "title": "N'Highlight School Chatbot",
+      "category": "Chatbot",
+      "date": "2022-04-7",
+      "image": "asset/school-chatbot.png?text=School Chatbot",
+      "tech_stack": ["Python", "FastAPI", "Firebase", "BOTNOI"],
+      "description": "N'Highlight is a Line chatbot that assists students and faculty members in school. This chatbot is used to compete in BOTNOI Marahackathon 2022 preliminary round.",
+      "github": "https://github.com/wtarit/athena-school-chatbot.git",
+      "more_info": "https://www.youtube.com/watch?v=hb0PVw82esA"
+    },
+    {
+      "id": 8,
+      "title": "Simple Blockchain Simulator",
+      "category": "Systems Programming",
+      "date": "2023-11-30",
+      "image": "asset/simple-blockchain-sim.png?text=Blockchain Sim",
+      "tech_stack": ["C", "Blockchain", "Simulator", "Hashing", "SHA256", "Data Structures"],
+      "description": "A lightweight Blockchain Simulator built in C to demonstrate the core mechanisms of blockchain such as block creation, transaction recording, hashing with SHA-256, and handling tamper attempts.",
+      "github": "https://github.com/PowderPePang/simple-blockchain-simulator.git",
+      "more_info": null
+    },
+    {
+      "id": 9,
+      "title": "Student Event Planner",
+      "category": "Software Development",
+      "date": "2025-12-14",
+      "image": "asset/student-event-planner.jpg?text=Student Planner",
+      "tech_stack": ["React", "Firebase", "Software Engineering"],
+      "description": "A web application built to help students, lecturers, organizers, and admins manage and join university events. Key capabilities include authentication, event management, registration, QR check-in, notifications, and role-based access.",
+      "github": "https://github.com/PowderPePang/CPE334_FinalProject_StudentPlanner.git",
+      "more_info": "https://www.canva.com/design/DAG5VmyQTK0/sZCereN73dgD2d-X_lgRgA/edit?utm_content=DAG5VmyQTK0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+    },
+    {
+      "id": 10,
+      "title": "Custom Linux Kernel & Process Monitor",
+      "category": "Systems Programming",
+      "date": "2025-12-05",
+      "image": "asset/process-monitor.png?text=Linux Kernel",
+      "tech_stack": ["C", "Linux Kernel 6.14", "Bash", "GCC"],
+      "description": "A Compilation of a custom Linux 6.14 HWE kernel and the development of a Loadable Kernel Module (LKM). The module exposes internal `task_struct` data via a custom `/proc` entry to a user-space C tool for real-time process and thread monitoring.",
+      "github": "https://github.com/PowderPePang/process-monitor-linux-kernel.git",
+      "more_info": null
     }
   ]
 }
