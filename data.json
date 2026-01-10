@@ -33,9 +33,14 @@
       "year": "2024"
     },
     {
-      "title": " Undergraduate Academic Excellence Scholarship",
+      "title": "Undergraduate Academic Excellence Scholarship",
       "organization": "Department of Computer Engineering, KMUTT",
       "year": "Semester 2/2023 to Semester 1/2025"
+    },
+    {
+      "title": "Honors Program Student in Advanced Mathematics",
+      "organization": "Gifted Education Office (GEO), KMUTT",
+      "year": "Semester 1/2023 to Semester 2/2023"
     }
   ],
   "experience": [
@@ -64,7 +69,8 @@
       "tech_stack": ["n8n", "RAG", "Pinecone", "ngrok"],
       "description": "AI chatbot for 'The Rich Hotel Rama V' to automate customer service, handling inquiries about room rates and facilities 24/7, powered by n8n workflows, RAG, and Pinecone vector database. It uses ngrok to expose the local server for webhook communication.",
       "github": "https://github.com/PowderPePang/Line-Facebook-Chatbot.git",
-      "more_info": null
+      "more_info": null,
+      "rank": 1
     },
     {
       "id": 2,
@@ -75,7 +81,8 @@
       "tech_stack": ["Verilog", "Basys3 FPGA", "Xilinx Vivado", "VGA", "Digital Electronics"],
       "description": "This project implements the classic puzzle game Tetris on an FPGA board using Verilog. The game runs on a Digilent Basys3 (Xilinx Artix-7) and outputs graphics via VGA, with scores displayed on a 7-segment display.",
       "github": "https://github.com/PowderPePang/CPE222_FinalProject_FPGA_Tetris.git",
-      "more_info": null
+      "more_info": null,
+      "rank": 4
     },
     {
       "id": 3,
@@ -86,7 +93,8 @@
       "tech_stack": ["Mobile App", "Flutter", "Object Detection", "NoSQL", "Google Cloud Vision API", "OCR"],
       "description": "An application to index images based on the content of the image. By using object detection and optical character recognition, we categorized images and enabled text searching.",
       "github": "https://github.com/wtarit/domacod.git",
-      "more_info": "https://www.facebook.com/100000550526763/videos/312858850738229/?idorvanity=130760193605030"
+      "more_info": "https://www.facebook.com/100000550526763/videos/312858850738229/?idorvanity=130760193605030",
+      "rank": 1
     },
     {
       "id": 4,
@@ -95,7 +103,8 @@
       "date": "2022-08-01",
       "image": "assets/images/adse2022.jpg?text=Elderly+Care",
       "tech_stack": ["SAP Analytics Cloud", "Data Analysis"],
-      "description": "Developed a data analytics storyboard and designed a 'Caregiver Hub' solution based on data analysis of the aging society in ASEAN."
+      "description": "Developed a data analytics storyboard and designed a 'Caregiver Hub' solution based on data analysis of the aging society in ASEAN.",
+      "rank": 2
     },
     {
       "id": 5,
@@ -106,7 +115,8 @@
       "tech_stack": ["Data Structures", "C", "A*", "Dijkstra", "BFS", "IDDFS"],
       "description": "A Pac-Man inspired game implemented in C to demonstrate real-time pathfinding. Features intelligent 'ghosts' powered by A*, Dijkstra, BFS, and IDDFS algorithms, allowing for a comparative observation of algorithmic performance in a dynamic environment.",
       "github": "https://github.com/PowderPePang/c-man.git",
-      "more_info": null
+      "more_info": null,
+      "rank": 3
     },
     {
       "id": 6,
@@ -117,7 +127,8 @@
       "tech_stack": ["Python", "Firebase", "App Engine", "Google Sheets", "Automated PDF", "Jotform"],
       "description": "Developed a chatbot for Prince of Songkla University's Law Faculty to handle student requests and FAQs.",
       "github": null,
-      "more_info": "https://youtu.be/8f2frPJxwaY?si=ttn_YJgzj6R3aLFi"
+      "more_info": "https://youtu.be/8f2frPJxwaY?si=ttn_YJgzj6R3aLFi",
+      "rank": 1
     },
     {
       "id": 7,
@@ -128,7 +139,8 @@
       "tech_stack": ["Python", "FastAPI", "Firebase", "BOTNOI", "School"],
       "description": "N'Highlight is a Line chatbot that assists students and faculty members in school. This chatbot is used to compete in BOTNOI Marahackathon 2022 preliminary round.",
       "github": "https://github.com/wtarit/athena-school-chatbot.git",
-      "more_info": "https://www.youtube.com/watch?v=hb0PVw82esA"
+      "more_info": "https://www.youtube.com/watch?v=hb0PVw82esA",
+      "rank": 3
     },
     {
       "id": 8,
@@ -139,7 +151,8 @@
       "tech_stack": ["C", "Blockchain", "Simulator", "Hashing", "SHA256", "Data Structures"],
       "description": "A lightweight Blockchain Simulator built in C to demonstrate the core mechanisms of blockchain such as block creation, transaction recording, hashing with SHA-256, and handling tamper attempts.",
       "github": "https://github.com/PowderPePang/simple-blockchain-simulator.git",
-      "more_info": null
+      "more_info": null,
+      "rank": 4
     },
     {
       "id": 9,
@@ -150,7 +163,8 @@
       "tech_stack": ["React", "Firebase", "Software Engineering"],
       "description": "A web application built to help students, lecturers, organizers, and admins manage and join university events. Key capabilities include authentication, event management, registration, QR check-in, notifications, and role-based access.",
       "github": "https://github.com/PowderPePang/CPE334_FinalProject_StudentPlanner.git",
-      "more_info": null
+      "more_info": null,
+      "rank": 3
     },
     {
       "id": 10,
@@ -161,7 +175,146 @@
       "tech_stack": ["C", "Linux Kernel 6.14", "Bash", "GCC"],
       "description": "A Compilation of a custom Linux 6.14 HWE kernel and the development of a Loadable Kernel Module (LKM). The module exposes internal `task_struct` data via a custom `/proc` entry to a user-space C tool for real-time process and thread monitoring.",
       "github": "https://github.com/PowderPePang/process-monitor-linux-kernel.git",
-      "more_info": null
+      "more_info": null,
+      "rank": 4
+    }
+  ],
+  "certificates": [
+    {
+      "id": 1,
+      "title": "NSC 2022 1st Runner-up",
+      "issuer": "NSTDA",
+      "date": "2022-03-14",
+      "image": "assets/certificates/nsc2022-1st-runner-up.jpg",
+      "rank": 1
+    },
+    {
+      "id": 2,
+      "title": "Super AI Engineer Season 2",
+      "issuer": "AIAT",
+      "date": "2021-12-05",
+      "image": "assets/certificates/superai-eligible-level2.png",
+      "rank": 4
+    },
+    {
+      "id": 3,
+      "title": "ADSE 2022 National Finalist",
+      "issuer": "ASEAN Foundation",
+      "date": "2022-08-25",
+      "image": "assets/certificates/adse2022-th-national-finals.png",
+      "rank": 2
+    },
+    {
+      "id": 4,
+      "title": "Google Data Analytics",
+      "issuer": "Coursera",
+      "date": "2023-06-01",
+      "image": "assets/certificates/google-data-analytics.png",
+      "rank": 4
+    },
+    {
+      "id": 5,
+      "title": "Shopee Code League 2022",
+      "issuer": "Shopee",
+      "date": "2022-03-26",
+      "image": "assets/certificates/shopee-code-league2022.png",
+      "rank": 4
+    },
+    {
+      "id": 6,
+      "title": "Future Perfect MIDI Hackathon",
+      "issuer": "SoA+D, KMUTT",
+      "date": "2022-01-30",
+      "image": "assets/certificates/midi-hackathon2022.jpeg",
+      "rank": 6
+    },
+    {
+      "id": 7,
+      "title": "Stairway to the Yellow-Red Gate Camp",
+      "issuer": "SCI-TU",
+      "date": "2021-10-17",
+      "image": "assets/certificates/math-stat-tu.png",
+      "rank": 8
+    },
+    {
+      "id": 8,
+      "title": "Science Exhibition",
+      "issuer": "FSci, KMUTT",
+      "date": "2021-08-14",
+      "image": "assets/certificates/sci-ex-kmutt.png",
+      "rank": 8
+    },
+    {
+      "id": 9,
+      "title": "BOTNOI Chatbot Marahackathon 2022 2nd Runner-up",
+      "issuer": "BOTNOI Group",
+      "date": "2022-05-30",
+      "image": "assets/certificates/botnoi-chatbot-mara-hack2022.jpg",
+      "rank": 3
+    },
+    {
+      "id": 10,
+      "title": "Diamond Jubilee Academic Day 2022 1st Place",
+      "issuer": "ACT",
+      "date": "2022-11-22",
+      "image": "assets/certificates/act-academic-day2022.jpg",
+      "rank": 10
+    },
+    {
+      "id": 11,
+      "title": "AI and Development Assistance Tools",
+      "issuer": "NECTEC & FIBO, KMUTT",
+      "date": "2023-01-08",
+      "image": "assets/certificates/ai-tool-fibo-nectec.jpg",
+      "rank": 8
+    },
+    {
+      "id": 12,
+      "title": "Assumption College Thonburi Diploma",
+      "issuer": "ACT",
+      "date": "2023-03-08",
+      "image": "assets/certificates/act-diploma.jpg",
+      "rank": 8
+    },
+    {
+      "id": 13,
+      "title": "Seniors Tutoring Juniors (Academics)",
+      "issuer": "ACT",
+      "date": "2022-08-17",
+      "image": "assets/certificates/act-tutoring.jpg",
+      "rank": 10
+    },
+    {
+      "id": 14,
+      "title": "Notion Database for Everyone",
+      "issuer": "borntoDev",
+      "date": "2023-04-03",
+      "image": "assets/certificates/borntodev-acdemy-notion-db.png",
+      "rank": 8
+    },
+    {
+      "id": 15,
+      "title": "Science Education and Research Award 2023",
+      "issuer": "The Professor Dr.TabNilanidhi Foundation",
+      "date": "2024-12-22",
+      "image": "assets/certificates/sci-research-award-dr-tabnilanidhi.jpg",
+      "rank": 2
+    },
+    {
+      "id": 16,
+      "title": "AI Innovator Award 2024",
+      "issuer": "CMKL, KMITL",
+      "date": "2024-09-28",
+      "image": "assets/certificates/ai-inno-cmkl.jpg",
+      "rank": 5
+    },
+    {
+      "id": 17,
+      "title": "Empowering Coding Professionals in Data Analyst",
+      "issuer": "KKU",
+      "date": "2025-02-16",
+      "image": "assets/certificates/data-universe.jpg",
+      "rank": 6
     }
   ]
 }

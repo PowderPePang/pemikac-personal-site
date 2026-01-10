@@ -14,13 +14,35 @@
     <body>
         <nav>
             <div class="logo">Pemika.</div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="pages/experience.html">Experience</a></li>
                 <li><a href="pages/projects.html">Projects</a></li>
+                <li><a href="pages/certificates.html">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
+        <!-- Mobile vertical nav overlay -->
+        <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+            <button
+                class="close-btn"
+                id="mobile-nav-close"
+                aria-label="Close menu"
+            >
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/experience.html">Experience</a></li>
+                <li><a href="pages/projects.html">Projects</a></li>
+                <li><a href="pages/certificates.html">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
 
         <section class="hero">
             <div class="profile-img-container">

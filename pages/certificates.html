@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Pemika | Projects</title>
+        <title>Pemika | Certificates</title>
         <link rel="icon" type="image/png" href="../assets/icons/letter-p.png" />
         <link rel="stylesheet" href="../style.css" />
         <link
@@ -21,9 +21,11 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="experience.html">Experience</a></li>
                 <li>
-                    <a href="projects.html" class="active">Projects</a>
+                    <a href="projects.html">Projects</a>
                 </li>
-                <li><a href="certificates.html">Certificates</a></li>
+                <li>
+                    <a href="certificates.html" class="active">Certificates</a>
+                </li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
         </nav>
@@ -47,14 +49,13 @@
         </div>
 
         <section>
-            <h2>My Projects</h2>
+            <h2>Certificates</h2>
 
-            <!-- Search Bar -->
             <div style="text-align: center; margin-bottom: 2rem">
                 <input
                     type="text"
-                    id="search-input"
-                    placeholder="Search projects by keyword..."
+                    id="cert-search-input"
+                    placeholder="Search certificates by keyword..."
                     style="
                         width: 100%;
                         max-width: 500px;
@@ -66,25 +67,40 @@
                 />
             </div>
 
-            <!-- Filter & Sort Controls -->
             <div class="filter-sort-container">
-                <div class="filter-container" id="filter-container"></div>
-                <select class="sort" id="sort-select">
+                <div class="filter-container" id="cert-filter-container"></div>
+                <select class="sort" id="cert-sort-select">
                     <option value="rank">By Rank</option>
                     <option value="recent">Recently</option>
                     <option value="oldest">Oldest First</option>
-                    <option value="category">By Category</option>
                 </select>
             </div>
 
-            <div class="projects-grid" id="all-projects-container"></div>
+            <div class="certificates-grid" id="certificates-grid"></div>
         </section>
+
+        <!-- Modal / Lightbox -->
+        <div id="cert-modal" class="cert-modal" aria-hidden="true">
+            <div class="cert-modal-content">
+                <button
+                    class="cert-modal-close"
+                    id="cert-modal-close"
+                    aria-label="Close"
+                >
+                    <i class="fas fa-times"></i>
+                </button>
+                <img id="cert-modal-img" src="" alt="Certificate" />
+            </div>
+        </div>
 
         <script src="../script.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                loadData().then((data) => {
-                    initProjectPage(data.projects);
+                // explicitly pass relative path from this page to data.json
+                loadData("../data.json").then((data) => {
+                    if (data && data.certificates) {
+                        initCertificatesPage(data.certificates);
+                    }
                 });
             });
         </script>

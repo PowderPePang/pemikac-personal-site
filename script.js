@@ -1,16 +1,71 @@
 // 1. Fetch Data
-async function loadData() {
+async function loadData(pathOverride) {
     try {
-        // Detect if we're in a subdirectory (pages/) and adjust path accordingly
-        const path = window.location.pathname.includes("/pages/")
-            ? "../data.json"
-            : "data.json";
+        // Use explicit override when provided, otherwise detect subdirectory
+        const path =
+            pathOverride ||
+            (window.location.pathname.includes("/pages/")
+                ? "../data.json"
+                : "data.json");
         const response = await fetch(path);
         return await response.json();
     } catch (error) {
         console.error("Error loading JSON:", error);
     }
 }
+
+// Mobile nav toggle logic
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.getElementById("nav-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
+    const mobileClose = document.getElementById("mobile-nav-close");
+
+    if (!navToggle || !mobileNav) return;
+
+    const openMobileNav = () => {
+        mobileNav.classList.add("open");
+        document.documentElement.classList.add("mobile-nav-open");
+        mobileNav.setAttribute("aria-hidden", "false");
+    };
+
+    const closeMobileNav = () => {
+        mobileNav.classList.remove("open");
+        document.documentElement.classList.remove("mobile-nav-open");
+        mobileNav.setAttribute("aria-hidden", "true");
+    };
+
+    navToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openMobileNav();
+    });
+
+    mobileClose &&
+        mobileClose.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeMobileNav();
+        });
+
+    // Close when clicking a link inside mobile nav
+    mobileNav.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => closeMobileNav());
+    });
+
+    // Close when clicking outside the mobile nav (on document)
+    document.addEventListener("click", (e) => {
+        if (!mobileNav.classList.contains("open")) return;
+        const target = e.target;
+        if (!mobileNav.contains(target) && target !== navToggle) {
+            closeMobileNav();
+        }
+    });
+
+    // Keyboard: close on Escape
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileNav.classList.contains("open")) {
+            closeMobileNav();
+        }
+    });
+});
 
 // 2. Render Profile (Home)
 function renderProfile(profile) {
@@ -275,11 +330,154 @@ function renderProjects(projects, containerId, limit = null) {
         .join("");
 }
 
+// 5.1 Render Certificates (Gallery)
+function renderCertificates(certs, containerId = "certificates-grid") {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = certs
+        .map((c) => {
+            // Resolve image path similarly to projects
+            const isAbsoluteUrl = /^(?:[a-z]+:)?\/\//i.test(c.image);
+            const startsWithSlash = c.image.startsWith("/");
+            const startsWithDot =
+                c.image.startsWith("../") || c.image.startsWith("./");
+            const needsPrefix =
+                !isAbsoluteUrl &&
+                !startsWithSlash &&
+                !startsWithDot &&
+                window.location.pathname.includes("/pages/");
+            const imgSrc = needsPrefix ? `../${c.image}` : c.image;
+
+            return `
+        <div class="cert-card" data-id="${c.id}" data-image="${imgSrc}" tabindex="0">
+            <img class="cert-thumb" src="${imgSrc}" alt="${c.title}" />
+            <div class="cert-info">
+                <h4>${c.title}</h4>
+                <p>${c.issuer} • ${c.date}</p>
+            </div>
+        </div>
+    `;
+        })
+        .join("");
+}
+
+// 5.2 Certificates Page Logic (Search, Sort & Modal)
+function initCertificatesPage(certs) {
+    const containerId = "certificates-grid";
+    let currentSearch = "";
+    let currentSort = "rank";
+
+    const container = document.getElementById(containerId);
+    const searchInput = document.getElementById("cert-search-input");
+    const sortSelect = document.getElementById("cert-sort-select");
+    const modal = document.getElementById("cert-modal");
+    const modalImg = document.getElementById("cert-modal-img");
+    const modalClose = document.getElementById("cert-modal-close");
+
+    function openModal(cert) {
+        modalImg.src =
+            document.querySelector(`.cert-card[data-id="${cert.id}"]`).dataset
+                .image || cert.image;
+        modalImg.alt = cert.title || "Certificate";
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.documentElement.classList.add("modal-open");
+    }
+
+    function closeModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        modalImg.src = "";
+        document.documentElement.classList.remove("modal-open");
+    }
+
+    // Render helper
+    function updateView() {
+        let filtered = [...certs];
+
+        // search
+        if (currentSearch.trim()) {
+            const q = currentSearch.toLowerCase();
+            filtered = filtered.filter(
+                (c) =>
+                    c.title.toLowerCase().includes(q) ||
+                    (c.issuer && c.issuer.toLowerCase().includes(q))
+            );
+        }
+
+        // sort
+        filtered.sort((a, b) => {
+            if (currentSort === "recent")
+                return new Date(b.date) - new Date(a.date);
+            if (currentSort === "oldest")
+                return new Date(a.date) - new Date(b.date);
+            // rank (ascending)
+            const ra = typeof a.rank === "number" ? a.rank : 0;
+            const rb = typeof b.rank === "number" ? b.rank : 0;
+            if (ra !== rb) return ra - rb;
+            return new Date(b.date) - new Date(a.date);
+        });
+
+        renderCertificates(filtered, containerId);
+    }
+
+    // Initial render
+    updateView();
+
+    // Listeners
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            currentSearch = e.target.value;
+            updateView();
+        });
+    }
+
+    if (sortSelect) {
+        sortSelect.addEventListener("change", (e) => {
+            currentSort = e.target.value;
+            updateView();
+        });
+    }
+
+    // Delegate click to container for performance
+    if (container) {
+        container.addEventListener("click", (e) => {
+            const card = e.target.closest(".cert-card");
+            if (!card) return;
+            const id = Number(card.getAttribute("data-id"));
+            const cert = certs.find((c) => c.id === id);
+            if (cert) openModal(cert);
+        });
+
+        // keyboard accessibility: Enter to open
+        container.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                const card = e.target.closest(".cert-card");
+                if (!card) return;
+                const id = Number(card.getAttribute("data-id"));
+                const cert = certs.find((c) => c.id === id);
+                if (cert) openModal(cert);
+            }
+        });
+    }
+
+    // Modal close handlers
+    modalClose && modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("open"))
+            closeModal();
+    });
+}
+
 // 6. Project Page Logic (Filter, Search & Sort)
 function initProjectPage(projects) {
     const containerId = "all-projects-container";
     let currentFilter = "all";
-    let currentSort = "recent";
+    let currentSort = "rank";
     let currentSearch = "";
 
     // Helper function to apply all filters, search, and sorting
@@ -313,6 +511,15 @@ function initProjectPage(projects) {
                 return new Date(a.date) - new Date(b.date);
             } else if (currentSort === "category") {
                 return a.category.localeCompare(b.category);
+            } else if (currentSort === "rank") {
+                // Higher number value means less valuable — sort ascending
+                const ra = typeof a.rank === "number" ? a.rank : 0;
+                const rb = typeof b.rank === "number" ? b.rank : 0;
+                if (rb !== ra) return ra - rb;
+                // Tie-break: alphabetical by title (case-insensitive)
+                return a.title.localeCompare(b.title, undefined, {
+                    sensitivity: "base",
+                });
             }
             return 0;
         });
