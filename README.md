@@ -18,7 +18,8 @@ A responsive, data-driven portfolio website designed to showcase academic achiev
 ├── .github/workflows/
 │   └── deploy.yml       # GitHub Actions configuration for auto-deployment
 │
-├── assets/              # Static assets (Icons, Images, PDF CV)
+├── assets/              # Static assets (Certificates, Icons, Images, PDF CV)
+│   ├── certificates/
 │   ├── icons/
 │   ├── images/
 │   └── PemikaChongkwanyuen_CV.pdf
@@ -63,6 +64,7 @@ Open `data.json`. You can modify any field here.
 ### 2. Changing Images
 * **Profile Picture**: Replace the image file in your folder and update the `src` attribute in `index.html`.
 * **Project Images**: Add your screenshots to an `assets/images` folder and update the `"image"` paths in `data.json` to point to them (e.g., `"asset/images/domacod-nsc.jpg"`).
+* **Certificate Images**: Add your certificates to an `assets/certificates` folder and update the `"certificates"` paths in `data.json` to point to them (e.g., `"assets\certificates\sci-research-award-dr-tabnilanidhi.jpg"`).
 
 ## 📄 License
 
