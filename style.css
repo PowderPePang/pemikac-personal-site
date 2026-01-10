@@ -194,8 +194,33 @@ h2 {
 .experience-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 0.5rem;
+}
+
+/* Logo styling for timeline and experience cards */
+.timeline-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    flex: 0 0 40px;
+}
+.timeline-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    display: block;
+}
+
+.experience-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 12px;
+    border-radius: 6px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .experience-header h3 {
@@ -276,8 +301,7 @@ h2 {
     position: absolute;
     width: 16px;
     height: 16px;
-    left: -63px;
-    /* left: -28px; Adjust based on margin-left and line position */
+    left: -63px; /* Adjust based on margin-left and line position */
     background-color: var(--bg-color);
     border: 4px solid var(--accent-color);
     top: 20px;
@@ -286,11 +310,23 @@ h2 {
     transition: transform 0.3s ease;
 }
 
+.timeline-meta {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.timeline-submeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically center between date and role */
+}
+
 .timeline-date {
     font-size: 0.9rem;
     color: var(--secondary-color);
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .timeline-role {
@@ -302,7 +338,7 @@ h2 {
 .timeline-company {
     font-style: italic;
     color: var(--secondary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .timeline-details {

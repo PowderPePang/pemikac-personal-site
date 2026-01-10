@@ -130,20 +130,43 @@ function renderAwards(awardList) {
 function renderExperience(expList) {
     const container = document.getElementById("experience-container");
     if (!container) return;
-
     container.innerHTML = expList
-        .map(
-            (exp) => `
+        .map((exp) => {
+            // Resolve logo path similar to projects
+            let logoSrc = null;
+            if (exp.logo) {
+                const isAbsoluteUrl = /^(?:[a-z]+:)?\/\//i.test(exp.logo);
+                const startsWithSlash = exp.logo.startsWith("/");
+                const startsWithDot =
+                    exp.logo.startsWith("../") || exp.logo.startsWith("./");
+                const needsPrefix =
+                    !isAbsoluteUrl &&
+                    !startsWithSlash &&
+                    !startsWithDot &&
+                    window.location.pathname.includes("/pages/");
+                logoSrc = needsPrefix ? `../${exp.logo}` : exp.logo;
+            }
+
+            const logoHtml = logoSrc
+                ? `<div class="timeline-logo"><img src="${logoSrc}" alt="${exp.company} logo" /></div>`
+                : "";
+
+            return `
         <div class="timeline-item" onclick="this.classList.toggle('active')">
-            <div class="timeline-date">${exp.period}</div>
-            <div class="timeline-role">${exp.role}</div>
-            <div class="timeline-company">${exp.company}</div>
+            <div class="timeline-meta">
+                ${logoHtml}
+                    <div class="timeline-submeta">
+                    <div class="timeline-date">${exp.period}</div>
+                    <div class="timeline-role">${exp.role}</div>
+                    <div class="timeline-company">${exp.company}</div>
+                </div>
+            </div>
             <div class="timeline-details">
                 <p>${exp.description}</p>
             </div>
         </div>
-    `
-        )
+    `;
+        })
         .join("");
 }
 
@@ -162,17 +185,37 @@ function renderRecentExperience(expList, limit = null) {
     }
 
     container.innerHTML = displayExperiences
-        .map(
-            (exp) => `
+        .map((exp) => {
+            // Resolve logo path if provided
+            let logoSrc = null;
+            if (exp.logo) {
+                const isAbsoluteUrl = /^(?:[a-z]+:)?\/\//i.test(exp.logo);
+                const startsWithSlash = exp.logo.startsWith("/");
+                const startsWithDot =
+                    exp.logo.startsWith("../") || exp.logo.startsWith("./");
+                const needsPrefix =
+                    !isAbsoluteUrl &&
+                    !startsWithSlash &&
+                    !startsWithDot &&
+                    window.location.pathname.includes("/pages/");
+                logoSrc = needsPrefix ? `../${exp.logo}` : exp.logo;
+            }
+
+            const logoImg = logoSrc
+                ? `<img src="${logoSrc}" alt="${exp.company} logo" class="experience-logo" />`
+                : "";
+
+            return `
         <div class="experience-card">
             <div class="experience-header">
+                ${logoImg}
                 <h3>${exp.role}</h3>
                 <span class="experience-period">${exp.period}</span>
             </div>
             <p class="experience-company">${exp.company}</p>
         </div>
-    `
-        )
+    `;
+        })
         .join("");
 }
 

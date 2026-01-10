@@ -18,12 +18,10 @@ A responsive, data-driven portfolio website designed to showcase academic achiev
 ├── .github/workflows/
 │   └── deploy.yml       # GitHub Actions configuration for auto-deployment
 │
-├── asset/               # Static assets (Images, PDF CV)
-│   ├── profile.jpg
-│   ├── domacod.jpg
-│   ├── fpga-tetris.jpg
-│   ├── PemikaChongkwanyuen_CV.pdf
-│   └── ... (other project images)
+├── assets/              # Static assets (Icons, Images, PDF CV)
+│   ├── icons/
+│   ├── images/
+│   └── PemikaChongkwanyuen_CV.pdf
 │
 ├── pages/               # Secondary pages
 │   ├── experience.html
@@ -59,11 +57,12 @@ Then open your browser and go to `http://localhost:8000`.
 Open `data.json`. You can modify any field here.
 
 * **Add a new Job**: Add a new object to the `experience` array.
+* **Add organization logo**: For each item in the `experience` array you can add a `logo` field with the path to an image (recommended: `assets/icons/<logo-file>.png`). The site will use this to display the organization's logo next to the experience entry.
 * **Add a new Project**: Add a new object to the `projects` array. Ensure the `category` matches one you want to filter by.
 
 ### 2. Changing Images
 * **Profile Picture**: Replace the image file in your folder and update the `src` attribute in `index.html`.
-* **Project Images**: Add your screenshots to an `asset/` folder and update the `"image"` paths in `data.json` to point to them (e.g., `"asset/blockchain.png"`).
+* **Project Images**: Add your screenshots to an `assets/images` folder and update the `"image"` paths in `data.json` to point to them (e.g., `"asset/images/domacod-nsc.jpg"`).
 
 ## 📄 License
 
